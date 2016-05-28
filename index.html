@@ -1,0 +1,142 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Your Sweet Holiday</title>
+  <meta name="description" content="Aplikacja internetowa do planowania urlopu oraz zarządzania czasem spędzonym w pracy">
+  <meta name="author" content="Rafael Piazdecki">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/chartist.min.css">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+  <aside id="sidebar">
+    <header>
+	  <h1>
+	    <a href="/index.html">
+		  <img src="img/logo.png" alt="YourSweetHoliday Logo">
+		  <span>Your Sweet Holiday</span>
+	    </a>
+	  </h1>
+    </header>	
+	<nav>
+	  <a class="active" href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Pulpit</span></a>
+	  <a href="hours.html"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Nadgodziny&nbsp;/ Podgodziny</span></a>
+	  <a href="holiday-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i><span>Kalendarz urlopów</span></a>
+	  <a href="sign-out"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Wyloguj</span></a>
+	</nav>
+	<footer>
+	  Design i kodowanie:<br>
+	  Rafael Piazdecki
+	</footer>
+  </aside>
+  <main>
+    <article>
+	  <header>
+	      <div id="breadcrumbs"><span>Aktualnie znajdujesz się w:</span> <i class="fa fa-home" aria-hidden="true"></i>&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Pulpit</div> 
+		  <h2>Pulpit</h2>
+	  </header>
+	  	  <section class="section-padding-fix">
+	    <header>
+		  <h3><i class="fa fa-bar-chart" aria-hidden="true"></i> Podsumowanie</h3>
+		</header>
+		<div class="container" id="info-boxes-section">
+		   <div class="ct-chart ct-major-sixth"></div>
+
+		  <div>
+		    <h4>Pozostało dni</h4>
+			<div class="">
+			  <span id="minus-hours" class="flex-item">7</span>
+			</div>  
+		  </div>
+		  <div>
+		    <h4>Wykorzystano dni</h4>
+			<div class="">
+			  <span id="balance" class="flex-item">4</span>
+			</div>  
+		  </div>
+		</div>
+	  </section>
+	  <!--
+	  <section>
+	    <header>
+		  <h3><i class="fa fa-bar-chart" aria-hidden="true"></i> Podsumowanie</h3>
+		</header>
+		<div class="container" id="chart-section">
+		  <div>
+		    <div class="ct-chart ct-major-sixth"></div>
+		  </div>
+		  <div class="container-columns">
+		    <div>
+			  <h4>Pozostało dni</h4>
+			  <div>7</div>
+			</div>
+			<div>
+			  <h4>Wykorzystano dni</h4>
+			  <div>4</div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  -->
+      <section>
+	    <header>
+		  <h3><i class="fa fa-history" aria-hidden="true"></i> Historia urlopów</h3>
+		</header>
+       <table id="holiday-history">
+        <thead>
+          <tr>
+		    <th>Data (od - do)</th><th>Typ urlopu</th>
+		  </tr>
+		<thead>
+		<tbody>
+		  <tr>
+		    <td>02-03-2016 ~ 07-03-2016</td><td>wypoczynkowy</td>
+		  </tr>
+		    <td>03-04-2016 ~ 09-04-2016</td><td>chorobowy</td>
+		  </tr>
+		  <tr>
+		    <td>04-05-2016 ~ 12-05-2016</td><td>wypoczynkowy</td>
+		  </tr>
+		  <tr>
+		    <td>05-06-2016 ~ 13-06-2016</td><td>bezpłatny</td>
+		  </tr>
+		</tbody>
+	   </table>
+       <table id="holiday-history-xs">
+		<tbody>
+		  <tr>
+		    <td>02-03-2016 ~ 07-03-2016<br>wypoczynkowy</td>
+		  </tr>
+		    <td>03-04-2016 ~ 09-04-2016<br>chorobowy</td>
+		  </tr>
+		  <tr>
+		    <td>04-05-2016 ~ 12-05-2016<br>wypoczynkowy</td>
+		  </tr>
+		  <tr>
+		    <td>05-06-2016 ~ 13-06-2016<br>bezpłatny</td>
+		  </tr>
+		</tbody>
+	   </table>	
+	  </section>
+    </article>
+  </main>
+  </div>
+  <script src="js/chartist.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

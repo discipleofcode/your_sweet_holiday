@@ -1,0 +1,202 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Your Sweet Holiday - nadgodziny i podgodziny</title>
+  <meta name="description" content="Zarządzaj swoim urlopem w wygodnym kalendarzu">
+  <meta name="author" content="Rafael Piazdecki">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/chartist.min.css">
+  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
+  
+  <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+  
+  <!--Calender-->
+  <script src="js/underscore-min.js"></script>
+  <script src= "js/moment-2.2.1.js"></script>
+  <script src="js/clndr.js"></script>
+  <script src="js/main.js"></script>
+  <!-- end calender -->
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+  <aside id="sidebar">
+    <header>
+	  <h1>
+	    <a href="index.html">
+		  <img src="img/logo.png" alt="YourSweetHoliday Logo">
+		  <span>Your Sweet Holiday</span>
+	    </a>
+	  </h1>
+    </header>	
+	<nav>
+	  <a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Pulpit</span></a>
+	  <a href="hours.html"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Nadgodziny&nbsp;/ Podgodziny</span></a>
+	  <a class="active" href="holiday-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i><span>Kalendarz urlopów</span></a>
+	  <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Wyloguj</span></a>
+	</nav>
+	<footer>
+	  Design i kodowanie:<br>
+	  Rafael Piazdecki
+	</footer>
+  </aside>
+  <main>
+    <article>
+	  <header>
+	      <div id="breadcrumbs"><span>Aktualnie znajdujesz się w:</span> <i class="fa fa-home" aria-hidden="true"></i>&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i> Kalendarz urlopów</div> 
+		  <h2>Kalendarz urlopów</h2>
+	  </header>
+	        <section>
+	    <header>
+		  <h3><i class="fa fa-mouse-pointer" aria-hidden="true"></i> Wybierz typ urlopu i kliknij w wybrany dzień</h3>
+		</header>
+		<div id="holiday-types" class="container">
+		  <button class="active add-rest-day">wypoczynkowy</button>
+		  <button class="add-heal-day">chorobowy</button>
+		  <button class="add-non-pay-day">bezpłatny</button>
+		</div>
+		  <div class="content2">		
+			<div class="calnder">
+				<div class="column_right_grid calender">
+					<div class="cal1">
+						<div class="clndr">
+							<div class="clndr-controls">
+								<div class="clndr-control-button">
+									<p class="clndr-previous-button">previous</p>
+								</div>
+								<div class="month">SEPTEMBER 2015</div>
+								<div class="clndr-control-button rightalign">
+									<p class="clndr-next-button">next</p>
+								</div>
+							</div>
+								<table class="clndr-table">	
+									<thead>
+										<tr class="header-days">
+											<td class="header-day">SUN</td>
+											<td class="header-day">MON</td>	
+											<td class="header-day">TUE</td>
+											<td class="header-day">WED</td>
+											<td class="header-day">THU</td>
+											<td class="header-day">FRI</td>
+											<td class="header-day">SAT</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="day past adjacent-month last-month calender-day-2015-04-26"><div class="day-contents">26</div></td>
+											<td class="day past adjacent-month last-month calender-day-2015-04-26"><div class="day-contents">26</div></td>
+											<td class="day past adjacent-month last-month calender-day-2015-04-26"><div class="day-contents">26</div></td>
+											<td class="day past adjacent-month last-month calender-day-2015-04-26"><div class="day-contents">26</div></td>
+											<td class="day past adjacent-month last-month calender-day-2015-04-26"><div class="day-contents">26</div></td>
+											<td class="day past calender-day-2015-05-01"><div class="day-contents">1</div></td>
+											<td class="day past calender-day-2015-05-02"><div class="day-contents">2</div></td>
+										</tr>
+										<tr>
+											<td class="day past calender-day-2015-05-03"><div class="day-contents">3</div></td>
+											<td class="day past calender-day-2015-05-04"><div class="day-contents">4</div></td>
+											<td class="day past calender-day-2015-05-05"><div class="day-contents">5</div></td>
+											<td class="day past calender-day-2015-05-06"><div class="day-contents">6</div></td>
+											<td class="day past calender-day-2015-05-07"><div class="day-contents">7</div></td>
+											<td class="day past calender-day-2015-05-08"><div class="day-contents">8</div></td>
+											<td class="day past calender-day-2015-05-09"><div class="day-contents">9</div></td>
+										</tr>
+										<tr>
+											<td class="day past event calender-day-2015-05-10"><div class="day-contents">10</div></td>
+											<td class="day past event calender-day-2015-05-11"><div class="day-contents">11</div></td>
+											<td class="day past event calender-day-2015-05-12"><div class="day-contents">12</div></td>
+											<td class="day past event calender-day-2015-05-13"><div class="day-contents">13</div></td>
+											<td class="day today event calender-day-2015-05-14"><div class="day-contents">14</div></td>
+											<td class="day calender-day-2015-05-15"><div class="day-contents">15</div></td>
+											<td class="day calender-day-2015-05-16"><div class="day-contents">16</div></td>
+										</tr>
+										<tr>
+											<td class="day calender-day-2015-05-17"><div class="day-contents">17</div></td>
+											<td class="day calender-day-2015-05-18"><div class="day-contents">18</div></td>
+											<td class="day calender-day-2015-05-19"><div class="day-contents">19</div></td>
+											<td class="day calender-day-2015-05-20"><div class="day-contents">20</div></td>
+											<td class="day event calender-day-2015-05-21"><div class="day-contents">21</div></td>
+											<td class="day event calender-day-2015-05-22"><div class="day-contents">22</div></td>
+											<td class="day event calender-day-2015-05-23"><div class="day-contents">23</div></td>
+										</tr>
+										<tr>
+											<td class="day calender-day-2015-05-24"><div class="day-contents">24</div></td>
+											<td class="day calender-day-2015-05-25"><div class="day-contents">25</div></td>
+											<td class="day calender-day-2015-05-26"><div class="day-contents">26</div></td>
+											<td class="day calender-day-2015-05-27"><div class="day-contents">27</div></td>
+											<td class="day calender-day-2015-05-28"><div class="day-contents">28</div></td>
+											<td class="day calender-day-2015-05-29"><div class="day-contents">29</div></td>
+											<td class="day calender-day-2015-05-30"><div class="day-contents">30</div></td>
+										</tr>
+										<tr>
+											<td class="day calender-day-2015-05-31"><div class="day-contents">31</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-01"><div class="day-contents">1</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-02"><div class="day-contents">2</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-03"><div class="day-contents">3</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-04"><div class="day-contents">4</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-05"><div class="day-contents">5</div></td>
+											<td class="day adjacent-month next-month calender-day-2015-06-06"><div class="day-contents">6</div></td>
+										</tr>
+									</tbody>
+								</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </section>
+    </article>
+  </main>
+  </div>
+  <script>
+  
+    $(function() {
+	  $('#holiday-types').on('click', 'button', function() {
+	    $(this).parent().find('button').removeClass('active');
+		$(this).addClass('active');
+	  });
+	  
+	  $('.clndr').on('click', '.day', function() {
+	  
+	  	var activeButton = $('#holiday-types button.active');
+		var classToAdd = '';
+		
+		if ($(activeButton).hasClass('add-rest-day')) {
+		  classToAdd = 'rest-day';
+		} else if ($(activeButton).hasClass('add-heal-day')) {
+		  classToAdd = 'heal-day';
+		} else if ($(activeButton).hasClass('add-non-pay-day')) {
+		  classToAdd = 'non-pay-day';
+		}
+		
+		if ($(this).hasClass(classToAdd)) {
+		   $(this).removeClass(classToAdd);
+		} else {
+		
+	      $(this).removeClass('heal-day');
+	      $(this).removeClass('rest-day');
+	      $(this).removeClass('non-pay-day');
+	
+		
+		  $(this).addClass(classToAdd);
+		}
+		
+	  });
+	});
+	
+  </script>
+</body>
+</html>

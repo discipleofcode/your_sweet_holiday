@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Your Sweet Holiday - nadgodziny i podgodziny</title>
+  <meta name="description" content="W łatwy sposób pilnuj balansu swoich roboczogodzin">
+  <meta name="author" content="Rafael Piazdecki">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/chartist.min.css">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
+  
+  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+  <aside id="sidebar">
+    <header>
+	  <h1>
+	    <a href="index.html">
+		  <img src="img/logo.png" alt="YourSweetHoliday Logo">
+		  <span>Your Sweet Holiday</span>
+	    </a>
+	  </h1>
+    </header>	
+	<nav>
+	  <a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Pulpit</span></a>
+	  <a class="active" href="hours.html"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Nadgodziny&nbsp;/ Podgodziny</span></a>
+	  <a href="holiday-calendar.html"><i class="fa fa-calendar" aria-hidden="true"></i><span>Kalendarz urlopów</span></a>
+	  <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Wyloguj</span></a>
+	</nav>
+	<footer>
+	  Design i kodowanie:<br>
+	  Rafael Piazdecki
+	</footer>
+  </aside>
+  <main>
+    <article>
+	  <header>
+	      <div id="breadcrumbs"><span>Aktualnie znajdujesz się w:</span> <i class="fa fa-home" aria-hidden="true"></i>&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i> Nadgodziny i podgodziny</div> 
+		  <h2>Nadgodziny i podgodziny</h2>
+	  </header>
+	  <section class="section-padding-fix">
+	    <header>
+		  <h3><i class="fa fa-bar-chart" aria-hidden="true"></i> Podsumowanie</h3>
+		</header>
+		<div class="container" id="info-boxes-section">
+		  <div>
+		    <h4>Nadgodziny</h4>
+			<div class="">
+			  <span class="flex-item"><i class="fa fa-level-up" aria-hidden="true"></i></span>
+			  <span id="plus-hours" class="flex-item"></span>
+			</div>
+		  </div>
+		  <div>
+		    <h4>Podgodziny</h4>
+			<div class="">
+			  <span class="flex-item"><i class="fa fa-level-down" aria-hidden="true"></i></span>
+			  <span id="minus-hours" class="flex-item">12</span>
+			</div>  
+		  </div>
+		  <div>
+		    <h4>Bilans</h4>
+			<div class="">
+			  <span class="flex-item"><i class="fa fa-balance-scale" aria-hidden="true"></i></span>
+			  <span id="balance" class="flex-item">12</span>
+			</div>  
+		  </div>
+		</div>
+	  </section>
+      <section>
+	    <header>
+		  <h3><i class="fa fa-history" aria-hidden="true"></i> Historia nadgodzin i podgodzin</h3>
+		</header>
+      <table id="hours-history">
+        <thead>
+          <tr>
+		    <th>Data</th><th>Krótkie info</th><th>Ilość</th>
+		  </tr>
+		<thead>
+		<tbody>
+		  <tr>
+		    <td><input type="text" value="02-03-2016" name="date[]"></td><td><input type="text" value="Spotkanie z klientem" name="info[]"></td><td><input type="text" value="0" name="hours[]"></td>
+		  </tr>
+		    <td><input type="text" value="03-04-2016" name="date[]"></td><td><input type="text" value="Sobie wyszedłem" name="info[]"></td><td><input type="text" value="-2" name="hours[]"></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" value="04-05-2016" name="date[]"></td><td><input type="text" value="Łatanie bugów ie" name="info[]"></td><td><input type="text" value="12" name="hours[]"></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" value="05-06-2016" name="date[]"></td><td><input type="text" value="Problemy rodzinne" name="info[]"></td><td><input type="text" value="-3" name="hours[]"></td>
+		  </tr>
+		  <tr class="template">
+		    <td><input type="text" value="" name="date[]"></td><td><input type="text" value="" name="info[]"></td><td><input type="text" value="" name="hours[]"></td>
+		  </tr>
+		</tbody>
+	  </table>
+	  <div class="text-center">
+	    <button id="add-row"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+	  </div>
+	  </section>
+    </article>
+  </main>
+  </div>
+  <script>
+  
+    $(function() {
+	
+	  updateBalanceOfHours();
+	
+	  $('#add-row').on('click', function(e) {
+	    $('.template').before($('.template').clone().removeClass('template')).html();
+		$('html, body').animate({scrollTop: '+=' + $('.template').height()}, 800);
+		$('.template').prev().find('td:first-child input').focus();
+	  });
+	  
+	  $('tbody').on( "click", "td", function() {
+	    $(this).find('input').focus();
+		SetCaretAtEnd($(this).find('input')[0]);
+	  });
+	  
+	  $('tbody').on( "change", "input[name='hours[]']", function() {
+        updateBalanceOfHours();
+	  });
+	  
+	});
+	
+	function updateHoursOnPlus() {
+	  var currentHoursOnPlus = 0;
+	  
+      $("input[name='hours[]']").each(function() {
+	  
+		var inputValue = $(this).val();
+		
+		if (inputValue > 0) {
+		  currentHoursOnPlus = currentHoursOnPlus + parseFloat(inputValue);
+		}
+		$('#plus-hours').text(currentHoursOnPlus.toFixed(2));
+		
+	  });
+	  
+	  return currentHoursOnPlus.toFixed(2);
+	};
+	
+	function updateHoursOnMinus() {
+	  var currentHoursOnMinus = 0;
+	  
+      $("input[name='hours[]']").each(function() {
+	  
+		var inputValue = $(this).val();
+		
+		if (inputValue < 0) {
+		  currentHoursOnMinus = currentHoursOnMinus + parseFloat(inputValue);
+		}
+		$('#minus-hours').text(currentHoursOnMinus.toFixed(2));
+		
+	  });
+	  
+	  return currentHoursOnMinus.toFixed(2);
+	};
+	
+	function updateBalanceOfHours() {
+	  $('#balance').text((parseFloat(updateHoursOnPlus()) + parseFloat(updateHoursOnMinus())).toFixed(2));
+	};
+	
+	// not mine, taken from Stack
+	function SetCaretAtEnd(elem) {
+        var elemLen = elem.value.length;
+        // For IE Only
+        if (document.selection) {
+            // Set focus
+            elem.focus();
+            // Use IE Ranges
+            var oSel = document.selection.createRange();
+            // Reset position to 0 & then set at end
+            oSel.moveStart('character', -elemLen);
+            oSel.moveStart('character', elemLen);
+            oSel.moveEnd('character', 0);
+            oSel.select();
+        }
+        else if (elem.selectionStart || elem.selectionStart == '0') {
+            // Firefox/Chrome
+            elem.selectionStart = elemLen;
+            elem.selectionEnd = elemLen;
+            elem.focus();
+        } // if
+    } // SetCaretAtEnd()
+	
+  </script>
+</body>
+</html>
